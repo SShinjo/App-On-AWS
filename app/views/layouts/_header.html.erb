@@ -1,0 +1,51 @@
+  <nav class="nav navbar-nav navbar-left">
+        <span class="header-logo">Bookers</span>
+  </nav>
+  <nav>
+     <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to root_path do %>
+             <span class="glyphicon glyphicon-home"></span> Home
+            <% end %>
+          </li>
+          <li class="nav-list">
+            <%= link_to users_path do %>
+             <span class="glyphicon glyphicon-user"></span> Users
+            <% end %>
+          </li>
+          <li class="nav-list">
+            <%= link_to books_path do %>
+             <span class="glyphicon glyphicon-book"></span> Books
+            <% end %>
+          </li>
+          <li class="nav-list">
+            <%= link_to destroy_user_session_path, method: :delete do %>
+            <span class="glyphicon glyphicon-log-out"></span> logout
+            <% end %>
+          </li>
+
+          <% else %>
+          <li class="nav-list">
+            <%= link_to root_path do %>
+              <span class="glyphicon glyphicon-home"></span> Home
+            <% end %>
+          </li>
+          <li class="nav-list">
+            <%= link_to home_about_path do %>
+             <span class="glyphicon glyphicon-link"></span> About
+            <% end %>
+          </li>
+          <li class="nav-list">
+            <%= link_to new_user_registration_path do %>
+             <span class="glyphicon glyphicon-edit"></span> sign up
+            <% end %>
+          </li>
+          <li class="nav-list">
+            <%= link_to new_user_session_path do %>
+             <span class="glyphicon glyphicon-log-in"></span> login
+            <% end %>
+          </li>
+          <% end %>
+        </ul>
+      </nav>

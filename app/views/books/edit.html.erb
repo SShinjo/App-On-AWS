@@ -1,0 +1,21 @@
+<% if @book.errors.any? %>
+<%= render 'layouts/error-message' %>
+<% end %>
+<div class="container">
+
+<h1>Editing Book</h1>
+<%= form_for(@book) do |f| %>
+
+<h4>Title</h4>
+<%= f.text_field :title %>
+
+<h4>Opinion</h4>
+<%= f.text_area :body %>
+<br>
+<%= f.submit 'Update Book' %>
+<% end %>
+
+<%= link_to "show", book_path(@book) %> |
+<%= link_to "back", books_path %>
+
+</div>

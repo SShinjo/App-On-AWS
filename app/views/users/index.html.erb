@@ -1,0 +1,21 @@
+		<div class="sidebar col-xs-3">
+		<%= render 'layouts/sidebar', user:@user, book:@book_new %>
+		</div>
+		<div class="main-contents col-xs-9">
+		<h1>Users</h1>
+		<table class="table">
+		 <tr>
+		 	<th>image</th>
+			<th>name</th>
+			<th></th>
+			<th></th>
+		</tr>
+		<% @users.each do |user| %>
+		<tr>
+			<td><%= attachment_image_tag user, :profile_image, :fill, 30, 30, class: "profile-thumb", fallback: "no_image.jpg", size:'30x30' %></td>
+			<td><%= user.name %></td>
+			<td><%= link_to "show", user_path(user) %></td>
+		</tr>
+		<% end %>
+		</table>
+		</div>
